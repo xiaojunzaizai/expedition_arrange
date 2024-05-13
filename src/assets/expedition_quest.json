@@ -1,0 +1,1174 @@
+[
+    {
+        "code": "D1",
+        "name": "はじめての「遠征」！",
+        "memo_jp": "",
+        "memo_chinese": "舰队出发「远征」1次",
+        "expeditions": [
+            {
+                "name": "N/A",
+                "expedition_code": "N/A",
+                "expedition_consume_time": "N/A",
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D5",
+        "name": "第一次潜水艦派遣作戦",
+        "memo_jp": "※遠征の「潜水艦派遣作戦」成功で達成 ※潜水艦派遣演習と間違えないよう注意",
+        "memo_chinese": "成功实行初次的潜水舰派遣作战，完成远征30且成功",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D6",
+        "name": "第二次潜水艦派遣作戦",
+        "memo_jp": "※遠征の「潜水艦派遣作戦」成功で達成",
+        "memo_chinese": "成功实行第2次的潜水舰派遣作战，再完成远征30且成功",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D7",
+        "name": "潜水艦派遣作戦による技術入手の継続！",
+        "memo_jp": "※遠征の「潜水艦派遣作戦」を2回（D5・D6と併せて計4回）成功で達成 ※D6を完了させこの任務が発生した時点で最初から「50%以上達成」のマークが付いている",
+        "memo_chinese": "成功实行第3次和第4次的潜水舰派遣作战，为了导入他国制造技术努力，再完成2次远征30且成功",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D8",
+        "name": "潜水艦派遣による海外艦との接触作戦",
+        "memo_jp": "※遠征の「海外艦との接触」成功で達成",
+        "memo_chinese": "派遣有力的潜水舰队，成功实行与海外舰的接触作战，完成远征31且成功",
+        "expeditions": [
+            {
+                "name": "海外艦との接触",
+                "expedition_code": "31",
+                "expedition_consume_time": 120,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D10",
+        "name": "航空火力艦の運用を強化せよ！",
+        "memo_jp": "※遠征の「航空戦艦運用演習」成功で達成",
+        "memo_chinese": "实施「航空战舰运用演习」，努力强化航空火力舰的运用，完成远征23且成功",
+        "expeditions": [
+            {
+                "name": "航空戦艦運用演習",
+                "expedition_code": "23",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D12",
+        "name": "(続)航空火力艦の運用を強化せよ！",
+        "memo_jp": "※遠征の「航空戦艦運用演習」を3回（D10と合わせて計4回）成功で達成",
+        "memo_chinese": "继续实施「航空战舰运用演习」，继续努力强化航空火力舰的运用，再完成4次远征23且成功",
+        "expeditions": [
+            {
+                "name": "航空戦艦運用演習",
+                "expedition_code": "23",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 3,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D13",
+        "name": "遠洋潜水艦作戦を実施せよ！",
+        "memo_jp": "※遠征の「遠洋潜水艦作戦」成功で達成",
+        "memo_chinese": "实施「远洋潜水舰作战」，努力提升潜水舰队实力与削弱敌舰队，完成远征39且成功",
+        "expeditions": [
+            {
+                "name": "遠洋潜水艦作戦",
+                "expedition_code": "39",
+                "expedition_consume_time": 1800,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D14",
+        "name": "遠洋潜水艦作戦の成果を拡大せよ！",
+        "memo_jp": "※遠征の「遠洋潜水艦作戦」2回（D13と合わせて計3回）成功で達成",
+        "memo_chinese": "继续实施「远洋潜水舰作战」，努力提升潜水舰队实力与削弱敌舰队，再完成2次远征39且成功",
+        "expeditions": [
+            {
+                "name": "遠洋潜水艦作戦",
+                "expedition_code": "39",
+                "expedition_consume_time": 1800,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D15",
+        "name": "防空射撃演習を実施せよ！",
+        "memo_jp": "※遠征の「防空射撃演習」3回成功で達成",
+        "memo_chinese": "实施多次「防空射击演习」，提高舰队防空能力，完成3次远征6且成功",
+        "expeditions": [
+            {
+                "name": "防空射撃演習",
+                "expedition_code": "06",
+                "expedition_consume_time": 40,
+                "expedition_need_count": 3,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D16",
+        "name": "囮機動部隊支援作戦を実施せよ！",
+        "memo_jp": "※遠征の「囮機動部隊支援作戦」成功で達成",
+        "memo_chinese": "成功实施「囮机动部队支援作战」，完成远征15且成功",
+        "expeditions": [
+            {
+                "name": "囮機動部隊支援作戦",
+                "expedition_code": "15",
+                "expedition_consume_time": 720,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D17",
+        "name": "観艦式予行を実施せよ！",
+        "memo_jp": "※遠征の「観艦式予行」2回成功で達成",
+        "memo_chinese": "在观舰式实施之前。实施多次作为预演的「观舰式予行」，完成2次远征7且成功",
+        "expeditions": [
+            {
+                "name": "観艦式予行",
+                "expedition_code": "07",
+                "expedition_consume_time": 60,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D18",
+        "name": "観艦式を敢行せよ！",
+        "memo_jp": "※単純に観艦式の成功で達成 ※練度は不問の模様",
+        "memo_chinese": "以高练度的舰队实施真正的观舰式。成功实施「观舰式」，完成远征8且成功",
+        "expeditions": [
+            {
+                "name": "観艦式",
+                "expedition_code": "08",
+                "expedition_consume_time": 180,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D19",
+        "name": "機動部隊の運用を強化せよ！",
+        "memo_jp": "※遠征の「MO作戦」および「敵母港空襲作戦」をそれぞれ1回ずつ成功で達成 ※MO作戦は7h遠征、敵母港空襲作戦は80h(＝3day8h)遠征です。その点に留意",
+        "memo_chinese": "实施机动部队远征，成功实施「ＭＯ作戦」与「敌母港空袭作戦」，完成远征26和35且成功",
+        "expeditions": [
+            {
+                "name": "MO作戦",
+                "expedition_code": "35",
+                "expedition_consume_time": 420,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "敵母港空襲作戦",
+                "expedition_code": "26",
+                "expedition_consume_time": 4800,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D20",
+        "name": "潜水艦派遣作戦による航空機技術入手",
+        "memo_jp": "※遠征の「潜水艦派遣作戦」と「海外艦との接触」成功で達成 (前者を先に達成で50%、後者を先に達成で80%表示になると報告あり) ※潜水艦派遣作戦は1回で48h(=2day)かかる点に注意",
+        "memo_chinese": "通过「潜水艇派遣作战」，努力引入新型飞机技术，完成远征30跟31各1次",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海外艦との接触",
+                "expedition_code": "31",
+                "expedition_consume_time": 120,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D21",
+        "name": "潜水艦派遣作戦による噴式技術の入手",
+        "memo_jp": "※遠征の「潜水艦派遣作戦」と「海外艦との接触」成功(D20と合わせてそれぞれ2回ずつ)で達成 ※「鉄鋼5,000、ボーキサイト1,500」を所持していれば「50%以上達成」のマークが付くがそれを下回ると消える(超えれば再度付く) (「海外艦との接触」達成で80%表示になることからD20と同じ条件か？)",
+        "memo_chinese": "準备5000钢材及1500铝土，通过完成远征30+31各一次努力引入喷气式引擎技术!",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "海外艦との接触",
+                "expedition_code": "31",
+                "expedition_consume_time": 120,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D23",
+        "name": "海上護衛総隊、遠征開始！",
+        "memo_jp": "※遠征の「対潜警戒任務」及び「海上護衛任務」及び「タンカー護衛任務」をそれぞれ1回成功で達成 ※記載されている艦種全てを編成する必要は無く、遠征の成功に必要な艦のみを使用でも達成可",
+        "memo_chinese": "远征任务:进行远征任务「对潜警戒任务」「海上护卫任务」和「油轮护卫任务」，用轻巡,驱逐舰,海防舰等编成的护卫舰队取得各远征的成功!(远征4,5,9各成功完成1次)",
+        "expeditions": [
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D25",
+        "name": "遠征「補給」支援体制を強化せよ！",
+        "memo_jp": "※遠征の「兵站強化任務」を鋼材800以上の状態で成功させると達成",
+        "memo_chinese": "强化远征补给支援体制:準备钢材800，并实施远征任务「兵站强化任务」。成功进行此远征，为舰队远征时接受的「补给」支援体制努力吧(完成远征A1+準备800钢材)",
+        "expeditions": [
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D27",
+        "name": "「捷一号作戦」、発動準備！",
+        "memo_jp": "※遠征の「警備任務」及び「兵站強化任務」、「南西方面航空偵察作戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "捷一号作战準备任务:实施远征任务「警备任务」「兵站强化任务」及「西南方面航空侦查作战」。通过完成这些，为在南西方面的作战做好準备，完成远征3,A1,B1)",
+        "expeditions": [
+            {
+                "name": "警備任務",
+                "expedition_code": "03",
+                "expedition_consume_time": 20,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D28",
+        "name": "「海防艦」、進発せよ！",
+        "memo_jp": "※遠征の「A1 兵站強化任務」及び「A2 海峡警備行動」、「05 海上護衛任務」、「09 タンカー護衛任務」を各1回ずつ成功させると達成 ※海防艦が0でも可",
+        "memo_chinese": "海上护卫任务:以海防舰,驱逐舰为主体的护卫部队完成远征任务「兵站强化任务」「海峡警备任务」「海上护卫任务」「油轮护卫任务」，完成远征A1,A2,5,9",
+        "expeditions": [
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D29",
+        "name": "艦隊司令部の強化 【準備段階】",
+        "memo_jp": "※遠征の「17 敵地偵察作戦」及び「A2 海峡警備行動」、「B1 南西方面航空偵察作戦」、「A1 兵站強化任務」を各1回ずつ成功させると達成",
+        "memo_chinese": "舰队司令部强化的准备:派遣海防舰,水雷战队以及水上飞机母舰等，执行远征任务A1,A2,B1,17，并取得成功",
+        "expeditions": [
+            {
+                "name": "敵地偵察作戦",
+                "expedition_code": "17",
+                "expedition_consume_time": 45,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D30",
+        "name": "警備及び哨戒偵察を強化せよ！",
+        "memo_jp": "※遠征の「A2 海峡警備行動」及び「10 強行偵察任務」、「B1 南西方面航空偵察作戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "警戒任务:进行远征A2,10,B1，以南部战线远征为发端，进行内陆和南西诸岛方面的警戒侦查任务吧",
+        "expeditions": [
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "強行偵察任務",
+                "expedition_code": "10",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D31",
+        "name": "南方戦線遠征を実施せよ！",
+        "memo_jp": "※遠征の「37 東京急行」及び「38 東京急行(弐)」、「36 水上機基地建設」、「40 水上機前線輸送」、「35 MO作戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "南方战线远征:为支援南方海域作战，实施南方作战远征作战。进行南方海域远征37,38,36,40,35",
+        "expeditions": [
+            {
+                "name": "東京急行",
+                "expedition_code": "37",
+                "expedition_consume_time": 165,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "東京急行(弐)",
+                "expedition_code": "38",
+                "expedition_consume_time": 175,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "水上機基地建設",
+                "expedition_code": "36",
+                "expedition_consume_time": 540,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "水上機前線輸送",
+                "expedition_code": "40",
+                "expedition_consume_time": 410,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "MO作戦",
+                "expedition_code": "35",
+                "expedition_consume_time": 420,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D39",
+        "name": "西方連絡作戦による航空技術獲得",
+        "memo_jp": "※遠征：「30 潜水艦派遣作戦」を2回成功させると達成",
+        "memo_chinese": "实施西方联络作战:为了获得欧洲友军的航空技术，实施由多只潜水舰进行的「潜水舰派遣作战」并获得成功2次(远征30)",
+        "expeditions": [
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D41",
+        "name": "航空基地を整備拡張せよ！",
+        "memo_jp": "※遠征：「5 海上護衛任務」「A1 兵站強化任務」「9 タンカー護衛任務」「18 航空機輸送作戦」「36 水上機基地建設」「40 水上機前線輸送」「45 ボーキサイト船団護衛」を1回成功させると達成",
+        "memo_chinese": "航空基地整备:实施远征「海上护卫任务」「兵站强化任务」「油田护卫任务」「航空机输送作战」「水上机基地建设」「水上机前线输送」「铝土船团护卫」 (5,A1,9,18,36,40,45)",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "航空機輸送作戦",
+                "expedition_code": "18",
+                "expedition_consume_time": 300,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "水上機基地建設",
+                "expedition_code": "36",
+                "expedition_consume_time": 540,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "水上機前線輸送",
+                "expedition_code": "40",
+                "expedition_consume_time": 410,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "ボーキサイト船団護衛",
+                "expedition_code": "45",
+                "expedition_consume_time": 200,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D42",
+        "name": "【作戦準備】第一段階任務(対潜整備)",
+        "memo_jp": "※遠征：「3 警備任務」「4 対潜警戒任務」「5 海上護衛任務」「A2 海峡警備行動」「A1 兵站強化任務」を1回成功させると達成",
+        "memo_chinese": "作战准备(第一阶段任务):实施下列远征「警备任务」「对潜警戒任务」「海上护卫任务」「海峡警备任务」以及「兵站强化任务」并成功1次(3,4,5,A1,A2)",
+        "expeditions": [
+            {
+                "name": "警備任務",
+                "expedition_code": "03",
+                "expedition_consume_time": 20,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "D43",
+        "name": "海上輸送航路の護衛強化",
+        "memo_jp": "※遠征：「4 対潜警戒任務」「5 海上護衛任務」「9 タンカー護衛任務」「A1 兵站強化任務」「B1 南西方面航空偵察作戦」を1回成功させると達成",
+        "memo_chinese": "请实施「对潜警戒任务」「海上护卫任务」「油轮护卫任务」「兵站强化任务」「南西方面航空侦察作战」作战各一次(4,5,A1,9,B1)",
+        "expeditions": [
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dd1",
+        "name": "「遠征」を3回成功させよう！",
+        "memo_jp": "",
+        "memo_chinese": "本日中「远征」成功3回",
+        "expeditions": [
+            {
+                "name": "N/A",
+                "expedition_code": "N/A",
+                "expedition_consume_time": "N/A",
+                "expedition_need_count": 3,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dd2",
+        "name": "「遠征」を10回成功させよう！",
+        "memo_jp": "",
+        "memo_chinese": "本日中「远征」成功10回",
+        "expeditions": [
+            {
+                "name": "N/A",
+                "expedition_code": "N/A",
+                "expedition_consume_time": "N/A",
+                "expedition_need_count": 10,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dw1",
+        "name": "大規模遠征作戦、発令！",
+        "memo_jp": "",
+        "memo_chinese": "今周中「远征」成功30回",
+        "expeditions": [
+            {
+                "name": "N/A",
+                "expedition_code": "N/A",
+                "expedition_consume_time": "N/A",
+                "expedition_need_count": 30,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dw2",
+        "name": "南方への輸送作戦を成功させよ！",
+        "memo_jp": "※遠征の「東京急行」または「東京急行(弐)」成功で達成",
+        "memo_chinese": "毅然实行在激战的南方海域的「东京急行」系远征，完成远征37或38且成功",
+        "expeditions": [
+            {
+                "name": "東京急行",
+                "expedition_code": "37",
+                "expedition_consume_time": 165,
+                "expedition_need_count": 1,
+                "condition_status": "or"
+            },
+            {
+                "name": "東京急行(弐)",
+                "expedition_code": "38",
+                "expedition_consume_time": 175,
+                "expedition_need_count": 1,
+                "condition_status": "or"
+            }
+        ]
+    },
+    {
+        "code": "Dw3",
+        "name": "南方への鼠輸送を継続実施せよ！",
+        "memo_jp": "※遠征の「東京急行」または「東京急行(弐)」を6回（D9と合わせて計7回）成功で達成 ",
+        "memo_chinese": "今周中「东京急行」系远征继续实施，同种作战成功7回(和D9共计7次)，完成6次远征37或38且成功",
+        "expeditions": [
+            {
+                "name": "東京急行",
+                "expedition_code": "37",
+                "expedition_consume_time": 165,
+                "expedition_need_count": 6,
+                "condition_status": "or"
+            },
+            {
+                "name": "東京急行(弐)",
+                "expedition_code": "38",
+                "expedition_consume_time": 175,
+                "expedition_need_count": 6,
+                "condition_status": "or"
+            }
+        ]
+    },
+    {
+        "code": "Dm1",
+        "name": "輸送船団護衛を強化せよ！",
+        "memo_jp": "※マンスリー ※遠征の「海上護衛任務」を4回成功で達成",
+        "memo_chinese": "远征任务:反覆进行「海上护卫任务」，尽力进行输送船队的护卫，成功完成远征5四次)",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 4,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dq1",
+        "name": "海上通商航路の警戒を厳とせよ！",
+        "memo_jp": "※クォータリー ※遠征の「警備任務」及び「対潜警戒任務」及び「海上護衛任務」、「強行偵察任務」をそれぞれ1回成功で達成",
+        "memo_chinese": "远征任务:完成远征任务「警备任务」「对潜警戒任务」「海上护卫任务」「强行侦察任务」，压制敌军通商破坏舰队，确保还是通商航路的安全(远征3,4,5,10各完成一次)",
+        "expeditions": [
+            {
+                "name": "警備任務",
+                "expedition_code": "03",
+                "expedition_consume_time": 20,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "強行偵察任務",
+                "expedition_code": "10",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dq2",
+        "name": "近海に侵入する敵潜を制圧せよ！",
+        "memo_jp": "※クォータリー ※遠征の「対潜警戒任務」及び「海峡警備行動」、「長時間対潜警戒」をそれぞれ2回ずつ、合計6回実施すると達成 ※「兵站強化任務」と間違えないよう注意",
+        "memo_chinese": "敌方潜艇压制任务:多次实施远征任务「对潜警戒任务」「海峡警戒任务」「长时间对潜警戒」，压制侵入近海的敌方潜艇，从我方领海中驱逐出去，完成远征4,A2,A3各2次",
+        "expeditions": [
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "長時間対潜警戒",
+                "expedition_code": "A3",
+                "expedition_consume_time": 135,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy1",
+        "name": "特設護衛船団司令部、活動開始！",
+        "memo_jp": "※イヤーリー(2月) ※遠征：「03 警備任務」「05 海上護衛任務」「A1 兵站強化任務」「A2 海峡警備行動」「09 タンカー護衛任務」を各1回ずつ成功させると達成",
+        "memo_chinese": "海上护卫任务:远征任务3,5,A1,A2,9各完成一次，使用海防舰,驱逐舰等为主的护卫舰艇实施",
+        "expeditions": [
+            {
+                "name": "警備任務",
+                "expedition_code": "03",
+                "expedition_consume_time": 20,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海峡警備行動",
+                "expedition_code": "A2",
+                "expedition_consume_time": 55,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy2",
+        "name": "練習航海及び警備任務を実施せよ！",
+        "memo_jp": "※イヤーリー(3月) ※遠征：「01 練習航海」「02 長距離練習航海」「03 警備任務」「04 対潜警戒任務」「10 強行偵察任務」を各1回ずつ成功させると達成",
+        "memo_chinese": "练习航海以及警备任务:以轻巡,驱逐舰,海防舰等等舰船，实施完成1,2,3,4,10各项远征任务",
+        "expeditions": [
+            {
+                "name": "練習航海",
+                "expedition_code": "01",
+                "expedition_consume_time": 15,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "長距離練習航海",
+                "expedition_code": "02",
+                "expedition_consume_time": 30,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "警備任務",
+                "expedition_code": "03",
+                "expedition_consume_time": 20,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "強行偵察任務",
+                "expedition_code": "10",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy3",
+        "name": "小笠原沖哨戒線の強化を実施せよ！",
+        "memo_jp": "※イヤーリー(5月) ※遠征：「04 対潜警戒任務」「A5 小笠原沖哨戒線」「A6 小笠原沖戦闘哨戒」「B1 南西方面航空偵察作戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "使用轻巡,驱逐等成功完成4,A5,A6,B1各项远征任务各1次",
+        "expeditions": [
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "小笠原沖哨戒線",
+                "expedition_code": "A5",
+                "expedition_consume_time": 180,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "小笠原沖戦闘哨戒",
+                "expedition_code": "A6",
+                "expedition_consume_time": 210,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy4",
+        "name": "南西諸島方面の海上護衛を強化せよ！",
+        "memo_jp": "※イヤーリー(8月) ※遠征：「A1 兵站強化任務」「04 対潜警戒任務」「09 タンカー護衛任務」「B5 南西諸島捜索撃滅戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "使用轻巡,驱逐等成功完成「兵站强化任务」「对潜警戒任务」「油船护卫任务」「南西诸岛搜索击灭战」各项远征任务(4,A1,9,B5)",
+        "expeditions": [
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "対潜警戒任務",
+                "expedition_code": "04",
+                "expedition_consume_time": 50,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西諸島捜索撃滅戦",
+                "expedition_code": "B5",
+                "expedition_consume_time": 390,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy5",
+        "name": "兵站強化遠征任務【基本作戦】",
+        "memo_jp": "※イヤーリー(9月) ※遠征：「05 海上護衛任務」「A1 兵站強化任務」「11 ボーキサイト輸送任務」「B1 南西方面航空偵察作戦」を各1回ずつ成功させると達成",
+        "memo_chinese": "兵站强化远征任务:完成「海上护卫任务」「兵站强化任务」「航空铝运输任务」以及「南西方面航空侦察作战」远征任务(5,A1,11,B1)",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "ボーキサイト輸送任務",
+                "expedition_code": "11",
+                "expedition_consume_time": 300,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy6",
+        "name": "兵站強化遠征任務【拡張作戦】",
+        "memo_jp": "※イヤーリー(9月) ※遠征：「41 ブルネイ泊地沖哨戒」「05 海上護衛任務」「40 水上機前線輸送」「E2 強行鼠輸送作戦 (M)」「46 南西海域戦闘哨戒 (M)」を各1回ずつ成功させると達成",
+        "memo_chinese": "兵站强化扩张任务:完成「海上护卫任务」「水上机前线输送」「强行鼠输送作战」「汶莱泊地海湾警戒」以及「南西海域战斗警戒」远征任务(5,40,41,46,E2)",
+        "expeditions": [
+            {
+                "name": "ブルネイ泊地沖哨戒",
+                "expedition_code": "41",
+                "expedition_consume_time": 60,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "水上機前線輸送",
+                "expedition_code": "40",
+                "expedition_consume_time": 410,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy7",
+        "name": "西方連絡作戦準備を実施せよ！",
+        "memo_jp": "※イヤーリー(2月) ※遠征：「D1 西方海域偵察作戦」「29 潜水艦派遣演習」「30 潜水艦派遣作戦」「D3 欧州方面友軍との接触(M)」を各1回ずつ成功させると達成",
+        "memo_chinese": "西方联络作战准备:实施远征任务「西方海域侦察作战」「潜水艇派遣演习」「潜水艇派遣作战」以及「和欧洲方面友军接触」并获得成功(D1,29,30,D3 )",
+        "expeditions": [
+            {
+                "name": "西方海域偵察作戦",
+                "expedition_code": "D1",
+                "expedition_consume_time": 120,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "潜水艦派遣演習",
+                "expedition_code": "29",
+                "expedition_consume_time": 1440,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "潜水艦派遣作戦",
+                "expedition_code": "30",
+                "expedition_consume_time": 2880,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "Dy8",
+        "name": "新兵装開発資材輸送を船団護衛せよ！",
+        "memo_jp": "※イヤーリー(3月) ※遠征：「5 海上護衛任務」「12 資源輸送任務」「9 タンカー護衛任務」「B1 南西方面航空偵察作戦」「11 ボーキサイト輸送任務」を1回成功させると達成",
+        "memo_chinese": "新兵装开发资材输送护卫:实施远征「海上护卫任务」「资源输送任务」「油船护卫任务」「南西方面航空侦察作战」「铝土输送任务」并获得成功(5,12, 9,B1,11)",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "資源輸送任務",
+                "expedition_code": "12",
+                "expedition_consume_time": 480,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西方面航空偵察作戦",
+                "expedition_code": "B1",
+                "expedition_consume_time": 35,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "ボーキサイト輸送任務",
+                "expedition_code": "11",
+                "expedition_consume_time": 300,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "L2404D1",
+        "name": "【艦隊11周年記念任務】海上護衛遠征",
+        "memo_jp": "※期間限定 ※遠征：「05 海上護衛任務」「A1 兵站強化任務」「A3 長時間対潜警戒」を各1回ずつ成功し、「12 資源輸送任務」を2回成功させると達成",
+        "memo_chinese": "11周年海上护卫：实施远征任务“海上护卫任务”“兵站强化任务”“长时间对潜警戒”！并多次进行“资源输送任务”，完成各项远征！\t",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "兵站強化任務",
+                "expedition_code": "A1",
+                "expedition_consume_time": 25,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "長時間対潜警戒",
+                "expedition_code": "A3",
+                "expedition_consume_time": 135,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "資源輸送任務",
+                "expedition_code": "12",
+                "expedition_consume_time": 480,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            }
+        ]
+    },
+    {
+        "code": "L2404D2",
+        "name": "【艦隊11周年記念任務】資源輸出",
+        "memo_jp": "※期間限定ウィークリー ※遠征：「05 海上護衛任務」「09 タンカー護衛任務」「11 ボーキサイト輸送任務」を各2回ずつ成功させると達成 ※任務達成後、用意した資源は消費",
+        "memo_chinese": "资源输出任务，准备用于输出的钢材9500及弹药7500。并完成“海上护卫任务”“邮轮护卫任务”与“航空铝输送任务”各2次以上！",
+        "expeditions": [
+            {
+                "name": "海上護衛任務",
+                "expedition_code": "05",
+                "expedition_consume_time": 90,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "タンカー護衛任務",
+                "expedition_code": "09",
+                "expedition_consume_time": 240,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            },
+            {
+                "name": "ボーキサイト輸送任務",
+                "expedition_code": "11",
+                "expedition_consume_time": 300,
+                "expedition_need_count": 2,
+                "condition_status": "and"
+            }
+        ]
+    }
+]

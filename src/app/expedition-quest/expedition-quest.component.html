@@ -1,0 +1,36 @@
+<div>
+      <nz-collapse>
+          <nz-collapse-panel nzHeader="远征任务 (待更新)" nzActive="true">
+            <nz-tabset nzCentered >
+                <!-- <nz-tab></nz-tab> -->
+                <nz-tab nzTitle="All" *ngIf="tabsVisible">
+                    <nz-list nzGrid>
+                        <div nz-row [nzGutter]="16">
+                            <div nz-col [nzSpan]="6" *ngFor="let item of questData;">
+                              <nz-list-item (click)="onSelect(item)"  [ngClass]="{'selected': item.code === selectedId}">
+                                <!-- <nz-card [nzTitle]="item.code + ' ' + item.name">{{item.memo_jp  || item.memo_chinese}}</nz-card> -->
+                                <nz-collapse>
+                                    <nz-collapse-panel nzShowArrow="false" nzActive="false" [nzHeader]="item.code + ' ' + item.name">{{item.memo_jp  || item.memo_chinese}}</nz-collapse-panel>
+                                </nz-collapse>
+                              </nz-list-item>
+                            </div>
+                        </div>
+                      </nz-list>
+                </nz-tab>
+                <nz-tab nzTitle="日常">Content of Tab Pane 2</nz-tab>
+                <nz-tab nzTitle="周常">Content of Tab Pane 3</nz-tab>
+                <nz-tab nzTitle="月常">Content of Tab Pane 3</nz-tab>
+                <nz-tab nzTitle="季常">Content of Tab Pane 3</nz-tab>
+                <nz-tab nzTitle="年常">Content of Tab Pane 3</nz-tab>
+              </nz-tabset>
+          </nz-collapse-panel>
+      </nz-collapse>
+</div>
+
+<!-- <div>
+    <span *ngFor="let data of questData">
+        {{data.code}} {{data.name}}<br>
+    </span>
+    
+</div> -->
+

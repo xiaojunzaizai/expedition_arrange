@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port 4501",
+    "build": "ng build --output-path docs --base-href /expedition_arrange/",
+    "deploy": "ng deploy --base-href=/homepage/ --dir=dist/expedition_arrange",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:expedition_arrange": "node dist/expedition_arrange/server/server.mjs"
@@ -22,6 +23,7 @@
     "@angular/router": "^17.2.0",
     "@angular/ssr": "^17.2.2",
     "express": "^4.18.2",
+    "ng-zorro-antd": "^17.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

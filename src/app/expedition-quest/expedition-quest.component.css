@@ -1,0 +1,20 @@
+.inner-box {
+    background: #0092ff;
+    padding: 8px 0;
+  }
+
+  .selected {
+    background-color: #e6f7ff; /* 浅蓝色背景 */
+    border-left: 5px solid #1890ff; /* 蓝色边框标记为选中 */
+  }
+
+  .horizontal-list {
+    display: flex;            /* 使用 Flexbox */
+    flex-wrap: wrap;          /* 允许多行 */
+    justify-content: center;  /* 水平居中 */
+    gap: 16px;                /* 间距 */
+  }
+  
+  .horizontal-list nz-list-item {
+    flex: 1 1 200px;          /* 灵活的宽度，但不小于200px */
+  }
