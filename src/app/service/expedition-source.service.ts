@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagement';
 
+
 @Injectable({
   providedIn: 'root'
 })

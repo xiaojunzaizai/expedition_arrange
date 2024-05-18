@@ -9,6 +9,10 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducer } from './state/expedition.reducer';
+import { ExpeditionEffects } from './state/expedition.effects';
 
 registerLocaleData(zh);
 
@@ -17,5 +21,15 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom(RouterModule.forRoot(routes)),
-    importProvidersFrom(HttpClientModule), provideNzI18n(zh_CN), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient(withFetch())]
+    importProvidersFrom(HttpClientModule),
+    provideNzI18n(zh_CN),
+    importProvidersFrom(FormsModule),
+    provideAnimationsAsync(),
+    provideHttpClient(withFetch()),
+    importProvidersFrom(
+      StoreModule.forRoot({ expedition: reducer }),
+      StoreModule.forRoot({ quests: reducer }),
+      EffectsModule.forRoot([ExpeditionEffects])
+    )
+  ],
 };

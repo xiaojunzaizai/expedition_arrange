@@ -1,2 +1,22 @@
-<p>expedition-info works!</p>
-<h2>Hello World</h2>
+<div *ngIf="expedition">
+    <nz-collapse>
+        <nz-collapse-panel nzHeader="远征" nzActive="true">
+            <nz-table #sourceData [nzData]="expedition">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Consume Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of sourceData.data">
+                        <td>{{data.api_disp_no}}</td>
+                        <td>{{data.api_name}}</td>
+                        <td>{{data.api_time}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-collapse-panel>
+    </nz-collapse>
+</div>
