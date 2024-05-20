@@ -1,6 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { RouterModule, provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
@@ -11,10 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducer } from './state/expedition.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { expeditionReducer } from './state/expedition.reducer';
 import { ExpeditionEffects } from './state/expedition.effects';
 
 registerLocaleData(zh);
+const isDevMode = true; // 假设为开发模式
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,9 +28,9 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
     importProvidersFrom(
-      StoreModule.forRoot({ expedition: reducer }),
-      StoreModule.forRoot({ quests: reducer }),
-      EffectsModule.forRoot([ExpeditionEffects])
-    )
+      StoreModule.forRoot({ expedition: expeditionReducer }),
+      EffectsModule.forRoot([ExpeditionEffects]),
+      isDevMode ? StoreDevtoolsModule.instrument() : []
+    ),
   ],
 };

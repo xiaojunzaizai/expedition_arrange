@@ -1,31 +1,31 @@
-// state/expedition.effects.ts
+// expedition.effects.ts
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
-import { switchMap, map, catchError } from 'rxjs/operators';
 import { ExpeditionSourceService } from '../service/expedition-source.service';
-import { loadQuestData, loadQuestDataSuccess, loadExpeditionData, loadExpeditionDataSuccess } from './expedition.actions';
+import * as ExpeditionActions from './expedition.actions';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable()
 export class ExpeditionEffects {
   loadQuestData$ = createEffect(() => this.actions$.pipe(
-    ofType(loadQuestData),
-    switchMap(() => this.expeditionService.loadQuestData().pipe(
-      map(quests => loadQuestDataSuccess({ quests })),
-      catchError(error => of({ type: '[Expedition Quest] Load Quest Data Failed', error }))
+    ofType(ExpeditionActions.loadQuestData),
+    mergeMap(() => this.expeditionSourceService.loadQuestData().pipe(
+      map(questData => ExpeditionActions.loadQuestDataSuccess({ questData })),
+      catchError(error => of(ExpeditionActions.loadQuestDataFailure({ error })))
     ))
   ));
 
   loadExpeditionData$ = createEffect(() => this.actions$.pipe(
-    ofType(loadExpeditionData),
-    switchMap(() => this.expeditionService.loadExpeditionData().pipe(
-      map(expeditions => loadExpeditionDataSuccess({ expeditions })),
-      catchError(error => of({ type: '[Expedition Info] Load Expedition Data Failed', error }))
+    ofType(ExpeditionActions.loadExpeditionData),
+    mergeMap(() => this.expeditionSourceService.loadExpeditionData().pipe(
+      map(expeditionData => ExpeditionActions.loadExpeditionDataSuccess({ expeditionData })),
+      catchError(error => of(ExpeditionActions.loadExpeditionDataFailure({ error })))
     ))
   ));
 
   constructor(
     private actions$: Actions,
-    private expeditionService: ExpeditionSourceService
+    private expeditionSourceService: ExpeditionSourceService
   ) {}
 }

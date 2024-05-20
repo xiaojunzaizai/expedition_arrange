@@ -1,20 +1,24 @@
-// state/expedition.reducer.ts
+// expedition.reducer.ts
 import { createReducer, on } from '@ngrx/store';
-import { loadQuestDataSuccess, loadExpeditionDataSuccess } from './expedition.actions';
+import * as ExpeditionActions from './expedition.actions';
 import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagement';
 
-export interface State {
-  quests: ExpeditionQuest[];
-  expeditions: ExpeditionInfo[];
+export interface ExpeditionState {
+  questData: ExpeditionQuest[];
+  expeditionData: ExpeditionInfo[];
+  error: any;
 }
 
-export const initialState: State = {
-  quests: [],
-  expeditions: []
+export const initialState: ExpeditionState = {
+  questData: [],
+  expeditionData: [],
+  error: null
 };
 
-export const reducer = createReducer(
+export const expeditionReducer = createReducer(
   initialState,
-  on(loadQuestDataSuccess, (state, { quests }) => ({ ...state, quests })),
-  on(loadExpeditionDataSuccess, (state, { expeditions }) => ({ ...state, expeditions }))
+  on(ExpeditionActions.loadQuestDataSuccess, (state, { questData }) => ({ ...state, questData })),
+  on(ExpeditionActions.loadExpeditionDataSuccess, (state, { expeditionData }) => ({ ...state, expeditionData })),
+  on(ExpeditionActions.loadQuestDataFailure, (state, { error }) => ({ ...state, error })),
+  on(ExpeditionActions.loadExpeditionDataFailure, (state, { error }) => ({ ...state, error }))
 );

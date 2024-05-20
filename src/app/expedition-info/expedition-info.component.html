@@ -1,4 +1,4 @@
-<div *ngIf="expedition">
+<div *ngIf="isViewInitialized && expedition">
     <nz-collapse>
         <nz-collapse-panel nzHeader="远征" nzActive="true">
             <nz-table #sourceData [nzData]="expedition">

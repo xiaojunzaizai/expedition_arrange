@@ -16,7 +16,7 @@ import {NzmoduleModule} from '../module/nzmodule/nzmodule.module';
 
 
 export class ExpeditionQuestComponent {
-  @Input() questData!: ExpeditionQuest[];
+  @Input() questData: ExpeditionQuest[] = [];
   tabsVisible: boolean =true;
 
   selectedItems: { [key: string]: boolean } = {};

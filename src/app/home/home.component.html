@@ -1,3 +1,2 @@
-<app-expedition-quest [questData]="questData"></app-expedition-quest>
-<app-expedition-info [expedition]="expeditionData"></app-expedition-info>
-<p>{{tmp}}</p>
+<app-expedition-quest *ngIf="questData$ | async as questData" [questData]="questData" ngSkipHydration></app-expedition-quest>
+<app-expedition-info *ngIf="expeditionData$ | async as expeditionData" [expedition]="expeditionData" ngSkipHydration></app-expedition-info>
