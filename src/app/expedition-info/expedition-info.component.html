@@ -1,7 +1,7 @@
-<div *ngIf="expedition && selectedQuests">
+<div *ngIf="expedition && selectedQuests.length>0">
     <nz-collapse>
         <nz-collapse-panel nzHeader="所需要的远征" nzActive="true">
-            <nz-table #sourceData [nzData]="expedition">
+            <nz-table #sourceData [nzData]="selectedQuestsExpeditionList">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -11,9 +11,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of sourceData.data">
-                        <td>{{data.api_disp_no}}</td>
-                        <td>{{data.api_name}}</td>
-                        <td>{{data.api_time}}</td>
+                        <td>{{data.expedition_code}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.expedition_consume_time}}</td>
                     </tr>
                 </tbody>
             </nz-table>

@@ -1,6 +1,6 @@
-import {  Component, Input, OnInit } from '@angular/core';
+import {  Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import {NzmoduleModule} from '../module/nzmodule/nzmodule.module';
-import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagement';
+import { ExpeditionInfo, ExpeditionQuest,ExpeditionInfoInQuest } from '../interface/interfaceManagement';
 
 @Component({
   selector: 'app-expedition-info',
@@ -9,12 +9,19 @@ import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagemen
   templateUrl: './expedition-info.component.html',
   styleUrl: './expedition-info.component.css'
 })
-export class ExpeditionInfoComponent implements OnInit{
+export class ExpeditionInfoComponent implements OnInit {
   @Input() expedition: ExpeditionInfo[]  = [];
   @Input() selectedQuests: ExpeditionQuest[] = [];
-
+  selectedQuestsExpeditionList:ExpeditionInfoInQuest[]=[];
   constructor() {}
 
   ngOnInit(): void {}
 
+  get_expedition_list(){
+    this.selectedQuests.forEach(quest =>{
+      quest.expeditions.forEach(item =>{
+        this.selectedQuestsExpeditionList.push(item);
+      })
+    })
+  }
 }
