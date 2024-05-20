@@ -1,6 +1,6 @@
-<div *ngIf="isViewInitialized && expedition">
+<div *ngIf="expedition && selectedQuests">
     <nz-collapse>
-        <nz-collapse-panel nzHeader="远征" nzActive="true">
+        <nz-collapse-panel nzHeader="所需要的远征" nzActive="true">
             <nz-table #sourceData [nzData]="expedition">
                 <thead>
                     <tr>

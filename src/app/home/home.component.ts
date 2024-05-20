@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   questData$: Observable<ExpeditionQuest[]>;
   expeditionData$: Observable<ExpeditionInfo[]>;
+  selectedQuests: ExpeditionQuest[] = [];
 
   constructor(private store: Store<{ expedition: ExpeditionState }>) {
     this.questData$ = this.store.select(state => state.expedition.questData);
@@ -30,6 +31,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(loadQuestData());
     this.store.dispatch(loadExpeditionData());
+  }
+
+  onSelectedQuestsChange(selectedQuests: ExpeditionQuest[]) {
+    this.selectedQuests = selectedQuests;
   }
 
 }

@@ -1,9 +1,32 @@
-<div>
+<div *ngIf="questData">
       <nz-collapse>
           <nz-collapse-panel nzHeader="远征任务 (待更新)" nzActive="true">
             <nz-tabset nzCentered >
-                <!-- <nz-tab></nz-tab> -->
-                <nz-tab nzTitle="All" *ngIf="tabsVisible">
+                <nz-tab nzTitle="选中的远征任务">
+                  <nz-list *ngIf="selectedQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of selectedQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateSelected"
+                            >
+                              <ng-template #headerTemplateSelected>
+                                <button nz-button nzDanger nzSize="small" (click)="removeQuest(item.code)">Remove</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="selectedQuests.length === 0" nzNoResult="没有选中的任务"></nz-list-empty>
+                </nz-tab>
+                <nz-tab nzTitle="All">
                     <nz-list nzGrid>
                         <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
                             <div nz-col [nzSpan]="6" *ngFor="let item of questData;">
@@ -15,8 +38,8 @@
                                     [nzHeader]="headerTemplate"
                                   >
                                     <ng-template #headerTemplate>
-                                      <label nz-checkbox [(ngModel)]="selectedItems[item.code]" >
-                                        {{ item.code }} {{ item.name }}
+                                      <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
                                       </label>
                                     </ng-template>
                                     {{ item.memo_jp || item.memo_chinese }}
@@ -27,12 +50,160 @@
                         </div>
                       </nz-list>
                 </nz-tab>
-                <nz-tab nzTitle="日常">Content of Tab Pane 2</nz-tab>
-                <nz-tab nzTitle="周常">Content of Tab Pane 3</nz-tab>
-                <nz-tab nzTitle="月常">Content of Tab Pane 4</nz-tab>
-                <nz-tab nzTitle="季常">Content of Tab Pane 5</nz-tab>
-                <nz-tab nzTitle="年常">Content of Tab Pane 6</nz-tab>
-                <nz-tab nzTitle="限定">Content of Tab Pane 7</nz-tab>
+                <nz-tab nzTitle="日常">
+                  <nz-list *ngIf="dailyQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of dailyQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateDaily"
+                            >
+                              <ng-template #headerTemplateDaily>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="dailyQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+                </nz-tab>
+                <nz-tab nzTitle="周常">
+                  <nz-list *ngIf="weekQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of weekQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateWeek"
+                            >
+                              <ng-template #headerTemplateWeek>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="weekQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+
+                </nz-tab>
+                <nz-tab nzTitle="月常">
+                  <nz-list *ngIf="monthQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of monthQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateMonth"
+                            >
+                              <ng-template #headerTemplateMonth>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="monthQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+
+                </nz-tab>
+                <nz-tab nzTitle="季常">
+                  <nz-list *ngIf="quarterQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of quarterQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateQuarter"
+                            >
+                              <ng-template #headerTemplateQuarter>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="quarterQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+
+                </nz-tab>
+                <nz-tab nzTitle="年常">
+                  <nz-list *ngIf="yearQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of yearQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateYear"
+                            >
+                              <ng-template #headerTemplateYear>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="yearQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+
+                </nz-tab>
+                <nz-tab nzTitle="限定">
+                  <nz-list *ngIf="specialQuests.length > 0" nzGrid>
+                    <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+                      <div nz-col [nzSpan]="6" *ngFor="let item of specialQuests">
+                        <nz-list-item>
+                          <nz-collapse nzExpandIconPosition="right">
+                            <nz-collapse-panel
+                              nzShowArrow
+                              [nzActive]="false"
+                              [nzHeader]="headerTemplateSpecial"
+                            >
+                              <ng-template #headerTemplateSpecial>
+                                <label nz-checkbox [(ngModel)]="selectedItems[item.code]" (ngModelChange)="getSelectedQuests()">
+                                  &nbsp;&nbsp;&nbsp;&nbsp;{{ item.code }} {{ item.name }}
+                                </label>
+                              </ng-template>
+                              {{ item.memo_jp || item.memo_chinese }}
+                            </nz-collapse-panel>
+                          </nz-collapse>
+                        </nz-list-item>
+                      </div>
+                    </div>
+                  </nz-list>
+                  <nz-list-empty *ngIf="specialQuests.length === 0" nzNoResult="无任务"></nz-list-empty>
+                </nz-tab>
               </nz-tabset>
           </nz-collapse-panel>
       </nz-collapse>

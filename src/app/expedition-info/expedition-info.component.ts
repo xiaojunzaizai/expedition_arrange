@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import {  Component, Input, OnInit } from '@angular/core';
 import {NzmoduleModule} from '../module/nzmodule/nzmodule.module';
-import { ExpeditionInfo } from '../interface/interfaceManagement';
+import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagement';
 
 @Component({
   selector: 'app-expedition-info',
@@ -9,16 +9,12 @@ import { ExpeditionInfo } from '../interface/interfaceManagement';
   templateUrl: './expedition-info.component.html',
   styleUrl: './expedition-info.component.css'
 })
-export class ExpeditionInfoComponent implements OnInit, AfterViewInit{
+export class ExpeditionInfoComponent implements OnInit{
   @Input() expedition: ExpeditionInfo[]  = [];
-  isViewInitialized = false;
+  @Input() selectedQuests: ExpeditionQuest[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.isViewInitialized = true;
-    this.cdr.detectChanges();
-  }
 }
