@@ -6,7 +6,9 @@
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
-                        <th>Consume Time</th>
+                        <th>Consume Time(min)</th>
+                        <th>Need Count</th>
+                        <th>Quest Codes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -14,6 +16,8 @@
                         <td>{{data.expedition_code}}</td>
                         <td>{{data.name}}</td>
                         <td>{{data.expedition_consume_time}}</td>
+                        <td>{{data.expedition_need_count}}</td>
+                        <td>{{ data.quest_codes.join(', ') }}</td>
                     </tr>
                 </tbody>
             </nz-table>
