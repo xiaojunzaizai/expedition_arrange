@@ -6,7 +6,6 @@ import { ExpeditionState } from '../state/expedition.reducer';
 import { ExpeditionInfoComponent } from '../expedition-info/expedition-info.component';
 import { ExpeditionQuestComponent } from '../expedition-quest/expedition-quest.component';
 import {ExpeditionInfo, ExpeditionInfoInQuest,ExpeditionQuest} from "../interface/interfaceManagement";
-import { ExpeditionSourceService } from '../service/expedition-source.service';
 import { GeneralModule } from '../module/generalmodule/general.module';
 // import { AppModule } from '../module/appmodule/app.module';
 
