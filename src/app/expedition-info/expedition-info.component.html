@@ -6,18 +6,24 @@
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
+                        <th>Quest Codes</th>
                         <th>Consume Time(min)</th>
                         <th>Need Count</th>
-                        <th>Quest Codes</th>
+                        <th>Completed Count</th>
+                        <th>Remaining Count</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of sourceData.data">
                         <td>{{data.expedition_code}}</td>
                         <td>{{data.name}}</td>
+                        <td>{{ data.quest_codes.join(', ') }}</td>
                         <td>{{data.expedition_consume_time}}</td>
                         <td>{{data.expedition_need_count}}</td>
-                        <td>{{ data.quest_codes.join(', ') }}</td>
+                        <td>0</td>
+                        <td>0</td>
+                        
                     </tr>
                 </tbody>
             </nz-table>
