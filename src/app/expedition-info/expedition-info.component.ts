@@ -13,6 +13,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   @Input() expedition: ExpeditionInfo[]  = [];
   @Input() selectedQuests: ExpeditionQuest[] = [];
   selectedQuestsExpeditionList:ExtendedExpeditionInfoInQuest[]=[];
+  demoValue = 0;
   constructor() {}
 
   ngOnInit(): void {}
@@ -24,23 +25,12 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       }
   }
 
-  get_selected_expedition_list(){
+  get_selected_expedition_list():void{
+    let tmp_list : ExtendedExpeditionInfoInQuest[] = [];
     this.selectedQuests.forEach(quest =>{
-      quest.expeditions.forEach(item =>{
-        const index = this.selectedQuestsExpeditionList.findIndex(exp => exp.expedition_code === item.expedition_code);
-        if (index !== -1) {
-          const existingItem = this.selectedQuestsExpeditionList[index];
-          existingItem.expedition_need_count += item.expedition_need_count;
-          
-          // Check if the quest code is already in the list
-          if (!existingItem.quest_codes.includes(quest.code)) {
-              existingItem.quest_codes.push(quest.code);
-          }       
-        } else {
-          // Add the new item with the additional field as a list
-          // this.selectedQuestsExpeditionList.push({ ...item, quest_codes: [quest.code] });        
-        }
-      })
+      tmp_list = tmp_list.concat(this.merge_or_condition_expedition(quest.expeditions,quest.code));
+      
+      this.selectedQuestsExpeditionList=this.merge_same_expedition(tmp_list);
     })
   }
 
@@ -64,7 +54,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
             ...item,
             name: item.name,
             expedition_code: item.expedition_code,
-            quest_codes: [quest_code],
+            quest_codes_list: [quest_code],
             completed_count: 0,
             remaining_count: item.expedition_need_count - 0,
             status: "In Progress",
@@ -73,7 +63,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       } else {
         result.push({
           ...item,
-          quest_codes: [quest_code],
+          quest_codes_list: [quest_code],
           completed_count: 0,
           remaining_count: item.expedition_need_count - 0,
           status: "In Progress",  
@@ -88,7 +78,27 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     return result
   }
 
+  merge_same_expedition(expedition_list:ExtendedExpeditionInfoInQuest[]):ExtendedExpeditionInfoInQuest[]{
+    let result = expedition_list.reduce<ExtendedExpeditionInfoInQuest[]>((acc, curr) =>{
+      let exist = acc.find( item => item.expedition_code === curr.expedition_code)
+      if (exist){
+        exist.expedition_need_count+=curr.expedition_need_count;
+        exist.completed_count += curr.completed_count;
+        exist.remaining_count += curr.remaining_count;
+        exist.quest_codes_list = exist.quest_codes_list.concat(curr.quest_codes_list);
+      } else{
+        acc.push({...curr});
+      }
+      return acc;
+    },[]);
+    return result;
+  }
+
   reset_expedition_list(){
     this.selectedQuestsExpeditionList = [];
+  }
+
+  updateSelectedList():void{
+    console.log(this.selectedQuestsExpeditionList);
   }
 }

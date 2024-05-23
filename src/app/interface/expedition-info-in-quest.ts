@@ -1,6 +1,5 @@
 import { ExpeditionStatus } from "./expedition-status";
 export interface ExpeditionInfoInQuest {
-    quest_codes: any;
     name: string;
     expedition_code: string;
     expedition_consume_time: string|number;
