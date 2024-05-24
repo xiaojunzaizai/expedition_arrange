@@ -119,6 +119,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     }
   }
 
+  updateExpeditionCount():void{
+    this.selectedQuestsExpeditionList;
+    this.storeModifyCompletedCount;
+  }
+
   startEdit(id: string): void {
     this.editId = id;
   }
