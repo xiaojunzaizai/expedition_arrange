@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NzmoduleModule } from '../module/nzmodule/nzmodule.module';
-import { ExpeditionInfo, ExpeditionQuest, ExpeditionInfoInQuest, ExtendedExpeditionInfoInQuest } from '../interface/interfaceManagement';
+import { ExpeditionInfo, ExpeditionQuest, ExpeditionInfoInQuest, ExtendedExpeditionInfoInQuest, ExpeditionCompletedCount } from '../interface/interfaceManagement';
 
 @Component({
   selector: 'app-expedition-info',
@@ -15,6 +15,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   selectedQuestsExpeditionList: ExtendedExpeditionInfoInQuest[] = [];
   demoValue = 0;
   editId: string | null = null;
+  storeModifyCompletedCount: ExpeditionCompletedCount[] = [];
   constructor() { }
 
   ngOnInit(): void { }
@@ -32,7 +33,8 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       tmp_list = tmp_list.concat(this.merge_or_condition_expedition(quest.expeditions, quest.code));
 
       this.selectedQuestsExpeditionList = this.merge_same_expedition(tmp_list);
-    })
+    });
+    console.log(this.storeModifyCompletedCount);
   }
 
   merge_or_condition_expedition(expedition_list: ExpeditionInfoInQuest[], quest_code: string): ExtendedExpeditionInfoInQuest[] {
@@ -99,9 +101,22 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     this.selectedQuestsExpeditionList = [];
   }
 
-  updateSelectedList(value: number): void {
-    console.log(value)
-    console.log(this.selectedQuestsExpeditionList);
+  updateSelectedList(expeditionCode: string, expeditionCompletedCount: number): void {
+    let tmp: ExpeditionCompletedCount = {
+      code: expeditionCode,
+      count: expeditionCompletedCount
+    };
+    let flag = true
+
+    this.storeModifyCompletedCount.forEach(item => {
+      if (item.code === expeditionCode) {
+        flag = false;
+        item.count = expeditionCompletedCount;
+      }
+    });
+    if (flag) {
+      this.storeModifyCompletedCount.push(tmp)
+    }
   }
 
   startEdit(id: string): void {
