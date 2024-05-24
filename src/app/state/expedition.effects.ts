@@ -27,5 +27,5 @@ export class ExpeditionEffects {
   constructor(
     private actions$: Actions,
     private expeditionSourceService: ExpeditionSourceService
-  ) {}
+  ) { }
 }

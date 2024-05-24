@@ -9,7 +9,7 @@ import { ExpeditionInfo, ExpeditionQuest } from '../interface/interfaceManagemen
 })
 export class ExpeditionSourceService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   loadQuestData(): Observable<ExpeditionQuest[]> {
     return this.http.get<ExpeditionQuest[]>('/assets/expedition_quest.json');

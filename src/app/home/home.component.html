@@ -1,2 +1,4 @@
-<app-expedition-quest *ngIf="questData$ | async as questData" [questData]="questData" (selectedQuestsChange)="onSelectedQuestsChange($event)" ngSkipHydration></app-expedition-quest>
-<app-expedition-info *ngIf="expeditionData$ | async as expeditionData" [expedition]="expeditionData" [selectedQuests]="selectedQuests" ngSkipHydration></app-expedition-info>
+<app-expedition-quest *ngIf="questData$ | async as questData" [questData]="questData"
+    (selectedQuestsChange)="onSelectedQuestsChange($event)" ngSkipHydration></app-expedition-quest>
+<app-expedition-info *ngIf="expeditionData$ | async as expeditionData" [expedition]="expeditionData"
+    [selectedQuests]="selectedQuests" ngSkipHydration></app-expedition-info>

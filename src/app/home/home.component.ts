@@ -5,14 +5,14 @@ import { loadQuestData, loadExpeditionData } from '../state/expedition.actions';
 import { ExpeditionState } from '../state/expedition.reducer';
 import { ExpeditionInfoComponent } from '../expedition-info/expedition-info.component';
 import { ExpeditionQuestComponent } from '../expedition-quest/expedition-quest.component';
-import {ExpeditionInfo, ExpeditionInfoInQuest,ExpeditionQuest} from "../interface/interfaceManagement";
+import { ExpeditionInfo, ExpeditionInfoInQuest, ExpeditionQuest } from "../interface/interfaceManagement";
 import { GeneralModule } from '../module/generalmodule/general.module';
 // import { AppModule } from '../module/appmodule/app.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [GeneralModule,ExpeditionInfoComponent, ExpeditionQuestComponent],
+  imports: [GeneralModule, ExpeditionInfoComponent, ExpeditionQuestComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

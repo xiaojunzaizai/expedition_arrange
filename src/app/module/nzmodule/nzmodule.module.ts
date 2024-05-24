@@ -18,7 +18,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 @NgModule({
   declarations: [],
   imports: [],
-  exports: [    
+  exports: [
     NzTabsModule,
     NzCollapseModule,
     NzTableModule,
