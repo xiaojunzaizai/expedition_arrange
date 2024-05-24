@@ -99,7 +99,8 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     this.selectedQuestsExpeditionList = [];
   }
 
-  updateSelectedList(): void {
+  updateSelectedList(value: number): void {
+    console.log(value)
     console.log(this.selectedQuestsExpeditionList);
   }
 

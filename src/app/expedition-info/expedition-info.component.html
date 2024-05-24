@@ -24,13 +24,13 @@
                         <td>
                             <div class="editable-cell" [hidden]="editId === data.expedition_code"
                                 (click)="startEdit(data.expedition_code)">
-                                {{ data.name }}
+                                {{ data.completed_count }}
                             </div>
-                            <input [hidden]="editId !== data.expedition_code" type="text" nz-input
-                                [(ngModel)]="demoValue" (blur)="stopEdit()" />
-                            <!-- <nz-input-number [(ngModel)]="demoValue" [nzMin]="0" [nzStep]="1" (ngModelChange)="updateSelectedList()"></nz-input-number> -->
+                            <nz-input-number [hidden]="editId !== data.expedition_code"
+                                [(ngModel)]=" data.completed_count" [nzMin]="0" [nzStep]="1"
+                                (ngModelChange)="updateSelectedList(data.completed_count)" (blur)=" stopEdit()">
+                            </nz-input-number>
                         </td>
-                        <!-- <td>{{data.completed_count}}</td> -->
                         <td>{{data.remaining_count}}</td>
                         <td>{{data.status}}</td>
                     </tr>
