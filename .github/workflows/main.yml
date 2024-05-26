@@ -15,21 +15,18 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4.0.2
         with:
-          node-version: '22'
-
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Angular App
-        run: ng build --prod
+        run: npm run build
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: dist
+          folder: dist/expedition_arrange
           clean: true
