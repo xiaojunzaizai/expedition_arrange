@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4501",
-    "build": "ng build --output-path docs --base-href /expedition_arrange/",
+    "build": "ng build --base-href /expedition_arrange/",
     "deploy": "ng deploy --base-href=/expedition_arrange/ --dir=dist/expedition_arrange",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
