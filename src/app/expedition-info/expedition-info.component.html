@@ -1,42 +1,51 @@
-<div *ngIf="expedition && selectedQuests.length>0">
-    <nz-collapse>
-        <nz-collapse-panel nzHeader="所需要的远征" nzActive="true">
-            <nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '500px' }">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>Quest Codes</th>
-                        <th>Consume Time(min)</th>
-                        <th>Need Count</th>
-                        <th>Completed Count</th>
-                        <th>Remaining Count</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of sourceData.data">
-                        <td>{{data.expedition_code}}</td>
-                        <td>{{data.name}}</td>
-                        <td>{{ data.quest_codes_list.join(', ') }}</td>
-                        <td>{{data.expedition_consume_time}}</td>
-                        <td>{{data.expedition_need_count}}</td>
-                        <td>
-                            <div class="editable-cell" [hidden]="editId === data.expedition_code"
-                                (click)="startEdit(data.expedition_code)">
-                                {{ data.completed_count }}
-                            </div>
-                            <nz-input-number [hidden]="editId !== data.expedition_code"
-                                [(ngModel)]=" data.completed_count" [nzMin]="0" [nzStep]="1"
-                                (ngModelChange)="updateSelectedList(data.expedition_code,data.completed_count)"
-                                (blur)=" stopEdit()">
-                            </nz-input-number>
-                        </td>
-                        <td>{{data.remaining_count}}</td>
-                        <td>{{data.status}}</td>
-                    </tr>
-                </tbody>
-            </nz-table>
-        </nz-collapse-panel>
-    </nz-collapse>
+<div *ngIf="expedition && selectedQuests.length > 0" (click)="onOutsideClick($event)">
+	<nz-collapse>
+		<nz-collapse-panel nzHeader="所需要的远征" nzActive="true">
+			<button nz-button [disabled]="storeModifyCompletedCount.length == 0" (click)="reset_completed_count()">
+				Reset Completed Count
+			</button>
+			<nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '500px' }">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Name</th>
+						<th>Quest Codes</th>
+						<th>Consume Time(min)</th>
+						<th>Need Count</th>
+						<th>Completed Count</th>
+						<th>Remaining Count</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let data of sourceData.data">
+						<td>{{ data.expedition_code }}</td>
+						<td>{{ data.name }}</td>
+						<td>{{ data.quest_codes_list.join(', ') }}</td>
+						<td>{{ data.expedition_consume_time }}</td>
+						<td>{{ data.expedition_need_count }}</td>
+						<td>
+							<div
+								class="editable-cell"
+								[hidden]="editId === data.expedition_code"
+								(click)="startEdit(data.expedition_code)">
+								{{ data.completed_count }}
+							</div>
+							<nz-input-number
+								#inputNumber
+								[hidden]="editId !== data.expedition_code"
+								[(ngModel)]="data.completed_count"
+								[nzMin]="0"
+								[nzStep]="1"
+								(ngModelChange)="
+									updateSelectedList(data.expedition_code, data.completed_count)
+								"></nz-input-number>
+						</td>
+						<td>{{ data.remaining_count }}</td>
+						<td>{{ data.status }}</td>
+					</tr>
+				</tbody>
+			</nz-table>
+		</nz-collapse-panel>
+	</nz-collapse>
 </div>

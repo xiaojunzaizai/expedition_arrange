@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { NzmoduleModule } from '../module/nzmodule/nzmodule.module';
 import { ExpeditionInfo, ExpeditionQuest, ExpeditionInfoInQuest, ExtendedExpeditionInfoInQuest, ExpeditionCompletedCount } from '../interface/interfaceManagement';
 
@@ -34,7 +34,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
 
       this.selectedQuestsExpeditionList = this.merge_same_expedition(tmp_list);
     });
-    console.log(this.storeModifyCompletedCount);
+    this.updateExpeditionCount();
   }
 
   merge_or_condition_expedition(expedition_list: ExpeditionInfoInQuest[], quest_code: string): ExtendedExpeditionInfoInQuest[] {
@@ -97,8 +97,16 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     return result;
   }
 
+  reset_completed_count() {
+    this.reset_expedition_list();
+    this.get_selected_expedition_list();
+  }
+
   reset_expedition_list() {
     this.selectedQuestsExpeditionList = [];
+    if (this.selectedQuests.length === 0) {
+      this.storeModifyCompletedCount = [];
+    }
   }
 
   updateSelectedList(expeditionCode: string, expeditionCompletedCount: number): void {
@@ -117,11 +125,25 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     if (flag) {
       this.storeModifyCompletedCount.push(tmp)
     }
+    this.updateExpeditionCount();
   }
 
   updateExpeditionCount():void{
     this.selectedQuestsExpeditionList;
     this.storeModifyCompletedCount;
+    if (this.storeModifyCompletedCount.length > 0 && this.selectedQuestsExpeditionList.length > 0) {
+      this.selectedQuestsExpeditionList.forEach(item => {
+        this.storeModifyCompletedCount.forEach(countItem => {
+          if (item.expedition_code === countItem.code) {
+            item.completed_count = countItem.count;
+            item.remaining_count = item.expedition_need_count - countItem.count;
+            if (item.remaining_count <= 0) {
+              item.status = "Completed";
+            }
+          }
+        });
+      });
+    }
   }
 
   startEdit(id: string): void {
@@ -130,5 +152,12 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
 
   stopEdit(): void {
     this.editId = null;
+  }
+
+  onOutsideClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.editable-cell')&&!target.closest('nz-input-number') && this.editId !== null) {
+      this.stopEdit();
+    }
   }
 }

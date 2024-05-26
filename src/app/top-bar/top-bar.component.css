@@ -1,0 +1,4 @@
+.h1_head{
+  text-align: center; /* 将文本居中 */
+  margin: 0 auto;     /* 设置外边距为自动，从而在父元素中居中 */
+}

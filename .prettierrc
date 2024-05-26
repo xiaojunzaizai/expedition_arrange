@@ -1,0 +1,12 @@
+{
+    "printWidth": 120,
+    "htmlWhitespaceSensitivity": "ignore",
+    "angularBracketSameLine": true,
+    "tabWidth": 2,
+    "useTabs": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "semi": true
+}

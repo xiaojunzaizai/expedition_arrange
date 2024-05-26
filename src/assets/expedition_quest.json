@@ -801,13 +801,6 @@
                 "expedition_consume_time": 135,
                 "expedition_need_count": 2,
                 "condition_status": "and"
-            },
-            {
-                "name": "兵站強化任務",
-                "expedition_code": "A1",
-                "expedition_consume_time": 25,
-                "expedition_need_count": 2,
-                "condition_status": "and"
             }
         ]
     },
