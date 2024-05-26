@@ -13,7 +13,6 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   @Input() expedition: ExpeditionInfo[] = [];
   @Input() selectedQuests: ExpeditionQuest[] = [];
   selectedQuestsExpeditionList: ExtendedExpeditionInfoInQuest[] = [];
-  demoValue = 0;
   editId: string | null = null;
   storeModifyCompletedCount: ExpeditionCompletedCount[] = [];
   constructor() { }
@@ -59,7 +58,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
             expedition_code: item.expedition_code,
             quest_codes_list: [quest_code],
             completed_count: 0,
-            remaining_count: item.expedition_need_count - 0,
+            remaining_count: item.expedition_need_count,
             status: "In Progress",
           });
         }
@@ -68,7 +67,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
           ...item,
           quest_codes_list: [quest_code],
           completed_count: 0,
-          remaining_count: item.expedition_need_count - 0,
+          remaining_count: item.expedition_need_count,
           status: "In Progress",
         })
       }
@@ -85,9 +84,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     let result = expedition_list.reduce<ExtendedExpeditionInfoInQuest[]>((acc, curr) => {
       let exist = acc.find(item => item.expedition_code === curr.expedition_code)
       if (exist) {
-        exist.expedition_need_count += curr.expedition_need_count;
+        if (exist.expedition_need_count <= curr.expedition_need_count) {
+          exist.expedition_need_count = curr.expedition_need_count;
+        }
         exist.completed_count += curr.completed_count;
-        exist.remaining_count += curr.remaining_count;
+        exist.remaining_count = exist.expedition_need_count - exist.completed_count;
         exist.quest_codes_list = exist.quest_codes_list.concat(curr.quest_codes_list);
       } else {
         acc.push({ ...curr });

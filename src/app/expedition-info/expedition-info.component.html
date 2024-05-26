@@ -4,7 +4,7 @@
 			<button nz-button [disabled]="storeModifyCompletedCount.length == 0" (click)="reset_completed_count()">
 				Reset Completed Count
 			</button>
-			<nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '500px' }">
+			<nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '570px' }">
 				<thead>
 					<tr>
 						<th>No.</th>
@@ -37,9 +37,7 @@
 								[(ngModel)]="data.completed_count"
 								[nzMin]="0"
 								[nzStep]="1"
-								(ngModelChange)="
-									updateSelectedList(data.expedition_code, data.completed_count)
-								"></nz-input-number>
+								(ngModelChange)="updateSelectedList(data.expedition_code, data.completed_count)" />
 						</td>
 						<td>{{ data.remaining_count }}</td>
 						<td>{{ data.status }}</td>
