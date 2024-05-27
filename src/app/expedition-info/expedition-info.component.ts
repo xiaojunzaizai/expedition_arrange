@@ -188,11 +188,13 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     this.listOfSelectedTeam.forEach(item => {
       if (expeditionCode === item.code) {
         previousTeam = item.team;
+        flag = false;
         if (selectedTeam !== this.defaultValue) {
-          flag = false;
           item.team = selectedTeam;
           this.listOfSelectedTeamValue = this.listOfSelectedTeamValue.filter(item => item !== previousTeam);
           this.listOfSelectedTeamValue.push(selectedTeam);
+        } else {
+          this.listOfSelectedTeamValue = this.listOfSelectedTeamValue.filter(item => item !== previousTeam);
         }
       }
     });
