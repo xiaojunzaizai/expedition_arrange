@@ -5,4 +5,5 @@ export interface ExtendedExpeditionInfoInQuest extends ExpeditionInfoInQuest {
   completed_count: number;
   remaining_count: number;
   status: string;
+  selectedTeam: string;
 }

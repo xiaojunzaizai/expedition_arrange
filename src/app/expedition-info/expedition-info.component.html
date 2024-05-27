@@ -4,6 +4,9 @@
 			<button nz-button [disabled]="storeModifyCompletedCount.length == 0" (click)="reset_completed_count()">
 				Reset Completed Count
 			</button>
+			<button nz-button [disabled]="listOfSelectedTeamValue.length == 0" (click)="reset_team_select()">
+				Reset Team Select
+			</button>
 			<nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '570px' }">
 				<thead>
 					<tr>
@@ -15,6 +18,7 @@
 						<th>Completed Count</th>
 						<th>Remaining Count</th>
 						<th>Status</th>
+						<th>In Progress: Team</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +45,17 @@
 						</td>
 						<td>{{ data.remaining_count }}</td>
 						<td>{{ data.status }}</td>
+						<td>
+							<nz-select
+								[(ngModel)]="data.selectedTeam"
+								(ngModelChange)="updateSelectedTeam(data.expedition_code, $event)">
+								<nz-option
+									*ngFor="let team of listOfTeams"
+									[nzValue]="team"
+									[nzLabel]="team"
+									[nzHide]="!isNotSelected(team)"></nz-option>
+							</nz-select>
+						</td>
 					</tr>
 				</tbody>
 			</nz-table>

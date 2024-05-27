@@ -28,5 +28,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: dist/expedition_arrange
+          folder: dist/expedition_arrange/browser
           clean: true

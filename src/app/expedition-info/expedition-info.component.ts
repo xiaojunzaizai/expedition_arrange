@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { NzmoduleModule } from '../module/nzmodule/nzmodule.module';
-import { ExpeditionInfo, ExpeditionQuest, ExpeditionInfoInQuest, ExtendedExpeditionInfoInQuest, ExpeditionCompletedCount } from '../interface/interfaceManagement';
+import { ExpeditionInfo, ExpeditionQuest, ExpeditionInfoInQuest, ExtendedExpeditionInfoInQuest, ExpeditionCompletedCount, ExpeditionSelectTeam } from '../interface/interfaceManagement';
 
 @Component({
   selector: 'app-expedition-info',
@@ -15,6 +15,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   selectedQuestsExpeditionList: ExtendedExpeditionInfoInQuest[] = [];
   editId: string | null = null;
   storeModifyCompletedCount: ExpeditionCompletedCount[] = [];
+  listOfTeams: string[]= ['Team 2', 'Team 3', 'Team 4', '------'];
+  listOfSelectedTeam: ExpeditionSelectTeam[] = [];
+  listOfSelectedTeamValue: string[] = [];
+  defaultValue: string= "------";
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -34,6 +39,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       this.selectedQuestsExpeditionList = this.merge_same_expedition(tmp_list);
     });
     this.updateExpeditionCount();
+    this.updateExpeditionSelectedTeam();
   }
 
   merge_or_condition_expedition(expedition_list: ExpeditionInfoInQuest[], quest_code: string): ExtendedExpeditionInfoInQuest[] {
@@ -60,6 +66,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
             completed_count: 0,
             remaining_count: item.expedition_need_count,
             status: "In Progress",
+            selectedTeam: this.defaultValue,
           });
         }
       } else {
@@ -69,6 +76,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
           completed_count: 0,
           remaining_count: item.expedition_need_count,
           status: "In Progress",
+          selectedTeam:this.defaultValue,
         })
       }
     })
@@ -98,8 +106,14 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     return result;
   }
 
+  reset_team_select() {
+    this.listOfSelectedTeamValue = [];
+    this.listOfSelectedTeam = [];
+    this.get_selected_expedition_list();
+  }
+
   reset_completed_count() {
-    this.reset_expedition_list();
+    this.storeModifyCompletedCount = [];
     this.get_selected_expedition_list();
   }
 
@@ -130,8 +144,6 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   }
 
   updateExpeditionCount():void{
-    this.selectedQuestsExpeditionList;
-    this.storeModifyCompletedCount;
     if (this.storeModifyCompletedCount.length > 0 && this.selectedQuestsExpeditionList.length > 0) {
       this.selectedQuestsExpeditionList.forEach(item => {
         this.storeModifyCompletedCount.forEach(countItem => {
@@ -161,4 +173,48 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       this.stopEdit();
     }
   }
+
+  isNotSelected(value: string): boolean {
+    return this.listOfSelectedTeamValue.indexOf(value) === -1;
+  }
+
+  updateSelectedTeam(expeditionCode:string, selectedTeam:string): void {
+    const tmp: ExpeditionSelectTeam = {
+      code: expeditionCode,
+      team: selectedTeam,
+    }
+    let previousTeam: string = "";
+    let flag = true;
+    this.listOfSelectedTeam.forEach(item => {
+      if (expeditionCode === item.code) {
+        previousTeam = item.team;
+        if (selectedTeam !== this.defaultValue) {
+          flag = false;
+          item.team = selectedTeam;
+          this.listOfSelectedTeamValue = this.listOfSelectedTeamValue.filter(item => item !== previousTeam);
+          this.listOfSelectedTeamValue.push(selectedTeam);
+        }
+      }
+    });
+
+    if (flag && (selectedTeam !== this.defaultValue)) {
+      this.listOfSelectedTeam.push(tmp);
+      this.listOfSelectedTeamValue.push(selectedTeam);
+    }
+  }
+
+  updateExpeditionSelectedTeam() {
+    if (this.listOfSelectedTeam.length > 0 && this.selectedQuestsExpeditionList.length > 0) {
+      this.selectedQuestsExpeditionList.forEach(item => {
+        this.listOfSelectedTeam.forEach(countItem => {
+          if (item.expedition_code === countItem.code) {
+            item.selectedTeam = countItem.team;
+          }
+        });
+      });
+    }
+    
+      
+    }
+
 }

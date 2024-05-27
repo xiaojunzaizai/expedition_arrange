@@ -1,4 +1,4 @@
 export interface ExpeditionCompletedCount {
-    code: string
+    code: string;
     count: number
 }
