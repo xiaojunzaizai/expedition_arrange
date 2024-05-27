@@ -12,10 +12,10 @@ export class ExpeditionSourceService {
   constructor(private http: HttpClient) { }
 
   loadQuestData(): Observable<ExpeditionQuest[]> {
-    return this.http.get<ExpeditionQuest[]>('/assets/expedition_quest.json');
+    return this.http.get<ExpeditionQuest[]>('assets/expedition_quest.json');
   }
 
   loadExpeditionData(): Observable<ExpeditionInfo[]> {
-    return this.http.get<ExpeditionInfo[]>('/assets/expedition.json');
+    return this.http.get<ExpeditionInfo[]>('assets/expedition.json');
   }
 }
