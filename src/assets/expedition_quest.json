@@ -1024,6 +1024,20 @@
                 "expedition_consume_time": 410,
                 "expedition_need_count": 1,
                 "condition_status": "and"
+            },
+            {
+                "name": "強行鼠輸送作戦",
+                "expedition_code": "E2",
+                "expedition_consume_time": 185,
+                "expedition_need_count": 1,
+                "condition_status": "and"
+            },
+            {
+                "name": "南西海域戦闘哨戒",
+                "expedition_code": "46",
+                "expedition_consume_time": 210,
+                "expedition_need_count": 1,
+                "condition_status": "and"
             }
         ]
     },
