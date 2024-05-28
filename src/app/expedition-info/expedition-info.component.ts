@@ -15,10 +15,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   selectedQuestsExpeditionList: ExtendedExpeditionInfoInQuest[] = [];
   editId: string | null = null;
   storeModifyCompletedCount: ExpeditionCompletedCount[] = [];
-  listOfTeams: string[]= ['Team 2', 'Team 3', 'Team 4', '------'];
+  listOfTeams: string[] = ['Team 2', 'Team 3', 'Team 4', '------'];
   listOfSelectedTeam: ExpeditionSelectTeam[] = [];
   listOfSelectedTeamValue: string[] = [];
-  defaultValue: string= "------";
+  listOfHide: ExtendedExpeditionInfoInQuest[] = [];
+  defaultValue: string = "------";
 
   constructor() { }
 
@@ -76,21 +77,21 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
           completed_count: 0,
           remaining_count: item.expedition_need_count,
           status: "In Progress",
-          selectedTeam:this.defaultValue,
-        })
+          selectedTeam: this.defaultValue,
+        });
       }
-    })
+    });
 
     if (tempExpeditionMap.size > 0) {
       tempExpeditionMap.forEach(value => result.push(value));
     }
 
-    return result
+    return result;
   }
 
   merge_same_expedition(expedition_list: ExtendedExpeditionInfoInQuest[]): ExtendedExpeditionInfoInQuest[] {
     let result = expedition_list.reduce<ExtendedExpeditionInfoInQuest[]>((acc, curr) => {
-      let exist = acc.find(item => item.expedition_code === curr.expedition_code)
+      let exist = acc.find(item => item.expedition_code === curr.expedition_code);
       if (exist) {
         if (exist.expedition_need_count <= curr.expedition_need_count) {
           exist.expedition_need_count = curr.expedition_need_count;
@@ -129,7 +130,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       code: expeditionCode,
       count: expeditionCompletedCount
     };
-    let flag = true
+    let flag = true;
 
     this.storeModifyCompletedCount.forEach(item => {
       if (item.code === expeditionCode) {
@@ -138,12 +139,12 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       }
     });
     if (flag) {
-      this.storeModifyCompletedCount.push(tmp)
+      this.storeModifyCompletedCount.push(tmp);
     }
     this.updateExpeditionCount();
   }
 
-  updateExpeditionCount():void{
+  updateExpeditionCount(): void {
     if (this.storeModifyCompletedCount.length > 0 && this.selectedQuestsExpeditionList.length > 0) {
       this.selectedQuestsExpeditionList.forEach(item => {
         this.storeModifyCompletedCount.forEach(countItem => {
@@ -169,7 +170,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
 
   onOutsideClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
-    if (!target.closest('.editable-cell')&&!target.closest('nz-input-number') && this.editId !== null) {
+    if (!target.closest('.editable-cell') && !target.closest('nz-input-number') && this.editId !== null) {
       this.stopEdit();
     }
   }
@@ -178,11 +179,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     return this.listOfSelectedTeamValue.indexOf(value) === -1;
   }
 
-  updateSelectedTeam(expeditionCode:string, selectedTeam:string): void {
+  updateSelectedTeam(expeditionCode: string, selectedTeam: string): void {
     const tmp: ExpeditionSelectTeam = {
       code: expeditionCode,
       team: selectedTeam,
-    }
+    };
     let previousTeam: string = "";
     let flag = true;
     this.listOfSelectedTeam.forEach(item => {
@@ -215,8 +216,8 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
         });
       });
     }
-    
-      
-    }
+
+
+  }
 
 }
