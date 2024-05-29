@@ -20,7 +20,11 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   listOfSelectedTeamValue: string[] = [];
   listOfHide: ExtendedExpeditionInfoInQuest[] = [];
   defaultValue: string = "------";
-
+  sortNo = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => a.expedition_code.localeCompare(b.expedition_code);
+  sortRemainCount = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => a.remaining_count - b.remaining_count;
+  sortStatus = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => a.status.localeCompare(b.status);
+  sortConsumeTime = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => this.parseConsumeTime(a.expedition_consume_time) - this.parseConsumeTime(b.expedition_consume_time);
+  
   constructor() { }
 
   ngOnInit(): void { }
@@ -41,6 +45,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
     });
     this.updateExpeditionCount();
     this.updateExpeditionSelectedTeam();
+    this.sortSelectedQuestExpeditionList();
   }
 
   merge_or_condition_expedition(expedition_list: ExpeditionInfoInQuest[], quest_code: string): ExtendedExpeditionInfoInQuest[] {
@@ -216,8 +221,37 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
         });
       });
     }
-
-
   }
+
+  addIntoHideList(expeditionCode:string):void {
+    const tmp = this.selectedQuestsExpeditionList.filter(item => item.expedition_code === expeditionCode);
+    this.listOfHide = this.listOfHide.concat(tmp);
+    this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.filter(item => item.expedition_code !== expeditionCode);
+  }
+
+  displayHidden() {
+    this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.concat(this.listOfHide);
+    this.listOfHide = [];
+  }
+
+  sortSelectedQuestExpeditionList() {
+    this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.sort((a,b)=> a.expedition_code.localeCompare(b.expedition_code));
+  }
+
+  parseConsumeTime = (time: string|number) => {
+    if (typeof time === 'string') {
+      // 如果时间包含'/'，取第一个部分
+      if (time.toLowerCase() === "N/A".toLowerCase()) {
+        return 0;
+      } else {
+        if (time.includes('/')) {
+          return parseInt(time.split('/')[0], 10);
+        }
+      }
+
+      return parseInt(time, 10);
+    }
+    return time;
+  };
 
 }

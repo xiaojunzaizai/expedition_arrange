@@ -7,17 +7,18 @@
 			<button nz-button [disabled]="listOfSelectedTeamValue.length == 0" (click)="reset_team_select()">
 				Reset Team Select
 			</button>
+			<button nz-button [disabled]="listOfHide.length == 0" (click)="displayHidden()">Reval Hidden</button>
 			<nz-table #sourceData [nzData]="selectedQuestsExpeditionList" [nzPageSize]="50" [nzScroll]="{ y: '570px' }">
 				<thead>
 					<tr>
-						<th>No.</th>
+						<th [nzSortFn]="sortNo">No.</th>
 						<th>Name</th>
 						<th>Quest Codes</th>
-						<th>Consume Time(min)</th>
+						<th [nzSortFn]="sortConsumeTime">Consume Time(min)</th>
 						<th>Need Count</th>
 						<th>Completed Count</th>
-						<th>Remaining Count</th>
-						<th>Status</th>
+						<th [nzSortFn]="sortRemainCount">Remaining Count</th>
+						<th [nzSortFn]="sortStatus">Status</th>
 						<th>In Progress: Team</th>
 						<th>Hide or not</th>
 					</tr>
@@ -57,7 +58,9 @@
 									[nzHide]="!isNotSelected(team)"></nz-option>
 							</nz-select>
 						</td>
-						<td> Test</td>
+						<td>
+							<button nz-button (click)="addIntoHideList(data.expedition_code)">Hide</button>
+						</td>
 					</tr>
 				</tbody>
 			</nz-table>
