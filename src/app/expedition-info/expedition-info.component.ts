@@ -19,6 +19,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   listOfSelectedTeam: ExpeditionSelectTeam[] = [];
   listOfSelectedTeamValue: string[] = [];
   listOfHide: ExtendedExpeditionInfoInQuest[] = [];
+  hideListSet: Set<string> = new Set<string>();
   defaultValue: string = "------";
   sortNo = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => a.expedition_code.localeCompare(b.expedition_code);
   sortRemainCount = (a: ExtendedExpeditionInfoInQuest, b: ExtendedExpeditionInfoInQuest) => a.remaining_count - b.remaining_count;
@@ -42,6 +43,7 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
       tmp_list = tmp_list.concat(this.merge_or_condition_expedition(quest.expeditions, quest.code));
 
       this.selectedQuestsExpeditionList = this.merge_same_expedition(tmp_list);
+      this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.filter(item => !this.hideListSet.has(item.expedition_code));
     });
     this.updateExpeditionCount();
     this.updateExpeditionSelectedTeam();
@@ -115,11 +117,18 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   reset_team_select() {
     this.listOfSelectedTeamValue = [];
     this.listOfSelectedTeam = [];
+    this.listOfHide.forEach(item =>{
+      item.selectedTeam=this.defaultValue;
+    });
     this.get_selected_expedition_list();
   }
 
   reset_completed_count() {
     this.storeModifyCompletedCount = [];
+    this.listOfHide.forEach(item =>{
+      item.completed_count = 0;
+      item.remaining_count = item.expedition_need_count;
+    });
     this.get_selected_expedition_list();
   }
 
@@ -226,12 +235,14 @@ export class ExpeditionInfoComponent implements OnInit, OnChanges {
   addIntoHideList(expeditionCode:string):void {
     const tmp = this.selectedQuestsExpeditionList.filter(item => item.expedition_code === expeditionCode);
     this.listOfHide = this.listOfHide.concat(tmp);
+    this.listOfHide.forEach(item => this.hideListSet.add(item.expedition_code));
     this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.filter(item => item.expedition_code !== expeditionCode);
   }
 
   displayHidden() {
     this.selectedQuestsExpeditionList = this.selectedQuestsExpeditionList.concat(this.listOfHide);
     this.listOfHide = [];
+    this.hideListSet.clear();
   }
 
   sortSelectedQuestExpeditionList() {
